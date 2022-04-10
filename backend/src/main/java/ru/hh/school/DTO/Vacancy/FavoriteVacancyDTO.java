@@ -3,6 +3,8 @@ package ru.hh.school.DTO.Vacancy;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import ru.hh.school.DTO.AreaDTO;
+import ru.hh.school.DTO.Employer.EmployerDTO;
+import ru.hh.school.DTO.Employer.FavoriteEmployerDTO;
 import ru.hh.school.DTO.SalaryDTO;
 import ru.hh.school.entity.Employer;
 import ru.hh.school.entity.Vacancy;
@@ -34,14 +36,14 @@ public class FavoriteVacancyDTO {
     private LocalDateTime createdAt;
 
     @NotNull
-    private Employer employer;
+    private FavoriteEmployerDTO employer;
 
     private String comment;
 
     private Popularity popularity;
 
-    @JsonProperty("views_count")
     @NotNull
+    @JsonProperty("views_count")
     private Integer viewsCount;
 
 
@@ -60,13 +62,13 @@ public class FavoriteVacancyDTO {
         salary.setSalaryGross(vacancy.getSalaryGross());
         salary.setSalaryCurrency(vacancy.getSalaryCurrency());
         createdAt = vacancy.getCreatedAt();
-        employer = vacancy.getEmployer();
+        employer = new FavoriteEmployerDTO(vacancy.getEmployer());
         comment = vacancy.getComment();
-        if (employer.getViewsCount() > 50)
+        if (vacancy.getViewsCount() > 50)
             popularity = Popularity.POPULAR;
         else
             popularity = Popularity.REGULAR;
-        viewsCount = employer.getViewsCount();
+        viewsCount = vacancy.getViewsCount();
     }
 
     public Integer getId() {
@@ -141,11 +143,11 @@ public class FavoriteVacancyDTO {
         this.createdAt = createdAt;
     }
 
-    public Employer getEmployer() {
+    public FavoriteEmployerDTO getEmployer() {
         return employer;
     }
 
-    public void setEmployer(Employer employer) {
+    public void setEmployer(FavoriteEmployerDTO employer) {
         this.employer = employer;
     }
 }

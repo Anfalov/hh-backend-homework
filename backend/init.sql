@@ -23,7 +23,7 @@ create table vacancy
     salary_from integer,
     salary_to integer,
     salary_gross boolean,
-    salary_currency text not null,
+    salary_currency text,
     created_at timestamp not null,
     employer_id integer not null references employer(id),
     comment text,

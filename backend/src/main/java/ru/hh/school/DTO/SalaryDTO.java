@@ -16,9 +16,8 @@ public class SalaryDTO {
     @JsonProperty("salary_gross")
     private Boolean salaryGross;
 
-    @NotNull
     @JsonProperty("salary_currency")
-    private Boolean salaryCurrency;
+    private String salaryCurrency;
 
     public Integer getSalaryFrom() {
         return salaryFrom;
@@ -44,11 +43,11 @@ public class SalaryDTO {
         this.salaryGross = salaryGross;
     }
 
-    public Boolean getSalaryCurrency() {
+    public String getSalaryCurrency() {
         return salaryCurrency;
     }
 
-    public void setSalaryCurrency(Boolean salaryCurrency) {
+    public void setSalaryCurrency(String salaryCurrency) {
         this.salaryCurrency = salaryCurrency;
     }
 }

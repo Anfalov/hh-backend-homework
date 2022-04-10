@@ -2,6 +2,7 @@ package ru.hh.school.DTO.Employer;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import ru.hh.school.DTO.AreaDTO;
+import ru.hh.school.entity.Employer;
 
 import javax.validation.constraints.NotNull;
 

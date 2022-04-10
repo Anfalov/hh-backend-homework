@@ -34,7 +34,7 @@ public class Vacancy {
     private Boolean salaryGross;
 
     @Column(name = "salary_currency")
-    private Boolean salaryCurrency;
+    private String salaryCurrency;
 
     @Column(name = "created_at")
     @NotNull
@@ -146,11 +146,11 @@ public class Vacancy {
         this.salaryGross = salaryGross;
     }
 
-    public Boolean getSalaryCurrency() {
+    public String getSalaryCurrency() {
         return salaryCurrency;
     }
 
-    public void setSalaryCurrency(Boolean salaryCurrency) {
+    public void setSalaryCurrency(String salaryCurrency) {
         this.salaryCurrency = salaryCurrency;
     }
 

@@ -34,7 +34,7 @@ public class VacancyService {
         for (Vacancy vacancy: vacancyList) {
             vacancy.setViewsCount(vacancy.getViewsCount() + 1);
             saveOrUpdate(vacancy);
-            Employer employer = employerService.getById(vacancy.getId());
+           Employer employer = employerService.getById(vacancy.getEmployer().getId());
             if (employer != null)
             {
                 employer.setViewsCount(employer.getViewsCount() + 1);
