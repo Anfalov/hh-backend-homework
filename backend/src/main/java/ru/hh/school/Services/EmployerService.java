@@ -27,14 +27,11 @@ public class EmployerService {
     @Transactional
     public List<Employer> getEmployers(int page, int per_page)
     {
-        List<Employer> employerList = employerDAO.getEmployers()
-                .setFirstResult(page * per_page)
-                .setMaxResults(per_page).getResultList();
+        List<Employer> employerList = employerDAO.getEmployers(page, per_page);
         for (Employer employer: employerList) {
             employer.setViewsCount(employer.getViewsCount() + 1);
             saveOrUpdate(employer);
         }
-        System.out.println("imthere " + employerList.size());
         return employerList;
     }
 

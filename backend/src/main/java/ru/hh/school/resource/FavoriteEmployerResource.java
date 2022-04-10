@@ -1,7 +1,7 @@
 package ru.hh.school.resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import ru.hh.school.DTO.Employer.CommentDTO;
+import ru.hh.school.DTO.CommentDTO;
 import ru.hh.school.DTO.Employer.EmployerDTO;
 import ru.hh.school.DTO.Employer.EmployerToFavoritesRequestDTO;
 import ru.hh.school.DTO.Employer.FavoriteEmployerDTO;

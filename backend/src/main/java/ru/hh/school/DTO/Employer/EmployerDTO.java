@@ -12,6 +12,7 @@ public class EmployerDTO {
     @NotNull
     private String name;
     private String description;
+    @NotNull
     private AreaDTO area;
 
     public Integer getId() {

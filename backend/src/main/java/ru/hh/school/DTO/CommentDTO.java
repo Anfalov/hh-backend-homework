@@ -1,4 +1,4 @@
-package ru.hh.school.DTO.Employer;
+package ru.hh.school.DTO;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
